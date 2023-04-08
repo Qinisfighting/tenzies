@@ -1,38 +1,218 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
+  box-sizing: content-box;
+  background-color: #8CC7B5;
+  border-radius: 15px;
+  width: 470px;
+  height: 470px;
+  color: black;
+  margin: 100px auto;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.title {
+  margin:30px auto 8px;
+  color: rgb(59, 59, 59);
+  font-size: 2.5em;
+  
+  
+}
+
+hr {
+ 
+  border: 1.5px outset rgba(255, 255, 255, 0.432);
+  width: 85%;
+  margin: 0 auto 8px;
+}
+
+.instructions {
+  text-align: center;
+  margin: 0 auto 10px;
+  width: 85%;
+  
+ 
+}
+.container {
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  grid-gap: 30px;
+  padding-bottom: 30px;
+  margin: auto;
+}
+
+
+.one {
+  background: #19CAAD;
+}
+
+.two {
+  background: #b0d6d8;
+}
+
+.three {
+  background: #E6CEAC;
+
+}
+
+.four {
+  background: #D1BA74;
+}
+
+.five {
+  background: #ECAD9E;
+}
+
+.face {
+  display: grid;
+  grid-template-areas:
+      "a . c"
+      "e g f"
+      "d . b";
+  border-style: none;
+  background-color: transparent;
+  margin: 2px auto;
+  gap:2px;
+  
+}
+
+.pip {
+  width:11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: white;
+  border-style: none;
+  display: block;
+	align-self: center;
+	justify-self: center;
+  box-shadow: inset 0 1px #696969;
+ 
+}
+
+
+.pip:nth-child(2) {
+  grid-area: b;
+  
+}
+.pip:nth-child(3) {
+  grid-area: c;
+  
+}
+.pip:nth-child(4) {
+  grid-area: d;  
+}
+
+.pip:nth-child(5) {
+  grid-area: e;
+  
+}
+.pip:nth-child(6) {
+  grid-area: f;
+  
+}
+.pip:nth-child(odd):last-child {
+  grid-area: g; 
+  margin: 2px auto;
+}
+
+.pip:nth-child(even):last-child {
+  margin: 2px auto;
+  
+}
+.held {
+  background: rgb(172, 78, 78);
   color: white;
+  width: 55px;
+  height: 55px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 180%;
+  font-family: 'Dancing Script', cursive;
+  margin: auto;
+  padding: 5px;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.held:hover {
+  font-size: 200%
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.item {
+  width: 55px;
+  height: 55px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 180%;
+  font-family: 'Dancing Script', cursive;
+  color: #ffffff;
+  margin: auto;
+  padding: 5px;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
+
+.item:hover {
+  font-size: 200%
+}
+
+button {
+  margin: 0 auto auto auto;
+  width: 150px;
+  height: 50px;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px -3px rgba(87, 87, 87, 0.7);
+  border-style: none;
+  background-color: rgba(255, 255, 255, 0.87);
+  color:  rgb(59, 59, 59);
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  box-shadow: inset 2px 2px 7px -2px rgba(0, 0, 0, 0.7);
+  border-style: none;
+}
+
+.confetti{
+  margin:0 auto
+}
+
+@media only screen and (max-width: 500px) {
+
+  main {
+    max-width: 300px;
+    height: auto;
+    margin: 100px auto;
+    display: flex;
+    box-sizing: content-box;
+    padding-bottom: 40px
+  }
+
+  .container {
+    display: grid;
+    grid-template: auto auto / repeat(2, 1fr);
+    padding-top: 25px;
+    column-gap: 45px;
+  }
+
+  .item {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    padding: 8px;
+  }
+
+  button {
+    width:175px;
+    font-size: 1.6em
+  }
+    
+  }
