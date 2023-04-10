@@ -3,7 +3,7 @@ main {
   background-color: #8CC7B5;
   border-radius: 15px;
   width: 470px;
-  height: 470px;
+  height: auto;
   color: black;
   margin: 80px auto;
   padding: 10px;
@@ -12,7 +12,7 @@ main {
 }
 
 .title {
-  margin:18px auto 8px;
+  margin:10px auto 8px;
   color: rgb(59, 59, 59);
   font-size: 2.5em;
   
@@ -76,6 +76,7 @@ hr {
   
 }
 
+
 .pip {
   width:11px;
   height: 11px;
@@ -133,11 +134,10 @@ hr {
   box-sizing: border-box;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  
 }
 
-.held:hover {
-  font-size: 200%
-}
+
 
 .item {
   width: 55px;
@@ -152,6 +152,7 @@ hr {
   box-sizing: border-box;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  
 }
 
 .item:hover {
@@ -161,12 +162,12 @@ hr {
 button {
   margin: 25px auto 0;
   width: 150px;
-  height: 50px;
+  height: 40px;
   font-size: 1.5em;
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 3px 3px 10px -3px rgba(87, 87, 87, 0.7);
+  box-shadow: 3px 3px 10px -3px rgba(87, 87, 87);
   border-style: none;
   background-color: rgba(255, 255, 255, 0.87);
   color:  rgb(59, 59, 59);
@@ -191,7 +192,15 @@ button:active {
   text-align: center;
   color:rgb(59, 59, 59);
   font-size: 25px; 
-  margin:20px auto 20px;
+  margin:12px auto 0;
+}
+
+.record {
+  margin: 0 auto;
+  padding-bottom: 10px;
+  font-weight: 400;
+  color:rgb(32, 32, 32);
+  
 }
 
 
@@ -203,13 +212,13 @@ button:active {
     margin: 100px auto;
     display: flex;
     box-sizing: content-box;
-    padding-bottom: 40px
+    padding-bottom: 10px
   }
 
   .container {
     display: grid;
     grid-template: auto auto / repeat(2, 1fr);
-    padding-top: 10px;
+    padding-bottom: 5px;
     column-gap: 45px;
   }
 
@@ -227,7 +236,14 @@ button:active {
 
   .stopwatch-time {
     
-    margin:20px auto 0;
+    margin:2px auto 0;
+    padding-top: 8px;
   }
     
+  .record {
+    margin: 0 auto;
+  
+  }
+  
+
   }

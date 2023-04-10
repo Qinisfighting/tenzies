@@ -12,13 +12,22 @@ function App() {
   const [tenzies, setTenzies] = React.useState(false)
   const [time, setTime] = React.useState(0);
   const [isRunning, setIsRunning] = React.useState(false);
+  const [records, setRecords] = React.useState(() => JSON.parse(localStorage.getItem("records")) || []) 
+  const [currentRecord, setCurrentRecord] = React.useState(Math.min(...records) || "")
+   
+
+  React.useEffect(() => {
+      localStorage.setItem("records", JSON.stringify(records))
+}, [records])
+
 
   React.useEffect(() => {
     let intervalId;
     if (isRunning) {
-   
+     //setting time from 0 to 1 every 10 milisecond 
       intervalId = setInterval(() => setTime(time + 1), 10);
     }
+    //stop the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, [isRunning, time]);
 
@@ -36,6 +45,20 @@ function App() {
     const minutes = Math.floor((time % 360000) / 6000); 
     const seconds = Math.floor((time % 6000) / 100);
     const milliseconds = time % 100; 
+    const timeScore = `${seconds}.${milliseconds}`
+    if(tenzies){
+      if(timeScore < Math.min(...records)){
+      setCurrentRecord(timeScore) 
+      records.push(currentRecord)
+      setRecords(prevRecords => [...prevRecords, timeScore])
+    }}
+    
+
+    //console.log(records)
+    //console.log(time)
+    //console.log(Math.min(...records))
+    //console.log(currentRecord)
+
     return (
       <div className="stopwatch-container">
         <p className="stopwatch-time">
@@ -45,6 +68,11 @@ function App() {
         </p>
       </div>
     );
+  }
+
+  const clearRecord = ()=> {
+    window.location.reload(false)
+    localStorage.clear()
   }
  
 
@@ -118,9 +146,24 @@ function App() {
         className="roll-dice" 
         onClick={rollDice}>{tenzies ? "New Game" : "Roll"}
       </button>
-      <div className='stopwatch'>{stopWatch()}</div>
-                         
-        
+      <div className='stopwatch'>{stopWatch()}</div> 
+      
+      <p className='record'   >Current Record: <i style={{color: 'rgb(172, 78, 78)', fontWeight: 'bold'}}>{records[records.length - 1]}</i>
+                                       <button className='clear' 
+                                            style={{
+                                            fontSize: 12, 
+                                            padding: 0, 
+                                            width: 80, 
+                                            height: 20, 
+                                            marginLeft: 10,
+                                            background: 'rgba(87, 87, 87, 0.7)',
+                                            color: 'white'
+                                            }} 
+                                            onClick={() =>{clearRecord()}}>clear record
+                                       </button>
+      </p>  
+      <hr/>                  
+      <p style = {{fontSize: 10, margin: '5px auto 10px'}}>QIN勤©2023 up&qu</p>    
     </main>
   );
 }

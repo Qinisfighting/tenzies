@@ -43,37 +43,36 @@ function Die(props) {
         return <div className="face">
                  <span className="pip"></span>
                  <span className="pip"></span>
-                 <span className="pip"></span>
-                
+                 <span className="pip"></span>          
                </div>
       }
       if(props.value === 4){
          return <div className="face">
-                 <span className="pip" style={{marginTop: 2}}></span>
-                 <span className="pip" style={{marginTop: 10}}></span>
-                 <span className="pip" style={{marginTop: 2}}></span>
-                 <span className="pip" style={{marginTop: 10}}></span>
+                  <span className="pip" style={{marginTop: 2}}></span>
+                  <span className="pip" style={{marginTop: 10}}></span>
+                  <span className="pip" style={{marginTop: 2}}></span>
+                  <span className="pip" style={{marginTop: 10}}></span>
                
                </div>
       }
       if(props.value === 5){
         return <div className="face">
-               <span className="pip"></span>
-               <span className="pip"></span>  
-               <span className="pip"></span>  
-               <span className="pip"></span>  
-               <span className="pip"></span>          
-            </div>
+                  <span className="pip"></span>
+                  <span className="pip"></span>  
+                  <span className="pip"></span>  
+                  <span className="pip"></span>  
+                  <span className="pip"></span>          
+               </div>
       }
       if(props.value === 6){
         return <div className="face">
-              <span className="pip"></span>
-              <span className="pip"></span>  
-              <span className="pip"></span>  
-              <span className="pip"></span>  
-              <span className="pip"></span>  
-              <span className="pip"></span>          
-     </div>
+                  <span className="pip"></span>
+                  <span className="pip"></span>  
+                  <span className="pip"></span>  
+                  <span className="pip"></span>  
+                  <span className="pip"></span>  
+                  <span className="pip"></span>          
+              </div>
     }
   }
     return (
