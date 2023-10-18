@@ -45,7 +45,7 @@ function App() {
     const minutes = Math.floor((time % 360000) / 6000); 
     const seconds = Math.floor((time % 6000) / 100);
     const milliseconds = time % 100; 
-    const timeScore = `${seconds}.${milliseconds}`
+    const timeScore = milliseconds >= 10 ? `${seconds}.${milliseconds}` : `${seconds}.0${milliseconds}`
     if(tenzies){
       if(timeScore < Math.min(...records)){
       setCurrentRecord(timeScore) 
@@ -148,7 +148,7 @@ function App() {
       </button>
       <div className='stopwatch'>{stopWatch()}</div> 
       
-      <p className='record'   >Current Record: <i style={{color: 'rgb(172, 78, 78)', fontWeight: 'bold'}}>{records[records.length - 1]}</i>
+      <p className='record'   >Current Record: <i style={{color: 'rgb(172, 78, 78)', fontWeight: 'bold'}}>{records[records.length - 1]} </i>s
                                        <button className='clear' 
                                             style={{
                                             fontSize: 12, 
