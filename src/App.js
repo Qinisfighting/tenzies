@@ -181,6 +181,7 @@ function App() {
           href="https://www.yanqin.de"
           target="_blank"
           rel="noopener noreferrer"
+          style={{ color: "black", textDecoration: "none" }}
         >
           QIN's code
         </a>
