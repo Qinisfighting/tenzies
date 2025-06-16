@@ -75,11 +75,14 @@ function Die(props) {
               </div>
     }
   }
-    return (
-      <div className={styles()} onClick={props.onclick}> {diceStyles(props)}
-        {/* <h3 className={styles()} onClick={props.onclick}>{props.value}</h3> */ }  
-      </div>
-    )
+   return (
+  <div
+    className={styles()}
+    onClick={typeof props.onclick === 'function' ? props.onclick : () => {}}
+  >
+    {diceStyles(props)}
+  </div>
+)
     
   }
   
