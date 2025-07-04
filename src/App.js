@@ -48,13 +48,12 @@ function App() {
       milliseconds >= 10
         ? `${seconds}.${milliseconds}`
         : `${seconds}.0${milliseconds}`;
-    if (tenzies) {
-      if (timeScore < Math.min(...records)) {
-        setCurrentRecord(timeScore);
-        records.push(currentRecord);
-        setRecords((prevRecords) => [...prevRecords, timeScore]);
-      }
-    }
+      if (tenzies) {
+      if (records.length === 0 || timeScore < Math.min(...records)) {
+    setCurrentRecord(timeScore);
+    setRecords((prevRecords) => [...prevRecords, timeScore]);
+  }
+}
 
     //console.log(records)
     //console.log(time)
